@@ -1,6 +1,8 @@
 
 #include <stdio.h>
 #include <cuda.h>
+//
+
 __global__ void MatrixMulKernel(float* M, float* N,float * P,int width,int height,int one_stripe){
     int Row = blockIdx.y * blockDim.y + threadIdx.y;
     int Col = blockIdx.x * blockDim.x + threadIdx.x;
